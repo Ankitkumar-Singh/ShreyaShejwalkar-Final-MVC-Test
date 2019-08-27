@@ -21,7 +21,7 @@ Admin
   UserName : shreya@gmail.com
   Password : Shreya@123
   
-  UserName : rabai@gmail.com
+  UserName : rabia@gmail.com
   Password : Rabia@123
 
 *  Admin can  only SignIn 
