@@ -1,0 +1,11 @@
+﻿<ul id="sidebarnav">
+    <li>
+        <a class="waves-effect waves-dark" href="@Url.Action("Index", "User")" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu"> Hotel List</span></a>
+    </li>
+    <li>
+        <a class="waves-effect waves-dark" href="@Url.Action("Create", "User")" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Book Hotel</span></a>
+    </li>
+    <li>
+        <a class="waves-effect waves-dark" href="@Url.Action("BookedHotels", "User", new { id = Session["UserId"] })" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Reservation Tokens</span></a>
+    </li>
+</ul>

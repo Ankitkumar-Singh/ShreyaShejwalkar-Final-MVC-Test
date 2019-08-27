@@ -1,0 +1,31 @@
+﻿@model HotelBookingSystem.Models.HotelDetail
+
+<!--Displaying Hotel Details-->
+<h4>Hotel Details</h4>
+<hr />
+<div class="container" style="max-width:100%">
+    <div class="row">
+        <div class=" col-md-3">
+            <img src="@Url.Content(Model.HotelImage)" alt="Responsive Image" width="250" height=" 240" />
+        </div>
+        <div class=" col-md-9">
+            <div class="hotelName">
+                <b>
+                    @Html.DisplayFor(model => model.HotelName)
+                </b>
+            </div><br />
+            <div class="row">
+                <div class=" col-md-8">
+                    <div class="hotelTitle">Hotel Description : </div><br />
+                    @Html.DisplayFor(model => model.HotelDescription)<br />
+                    <div class="hotelTitle">Hotel Category : </div><br />
+                    @Html.DisplayFor(model => model.HotelCategory.CategoryName)
+                </div>
+            </div>
+            <div class="backbtn">
+                @Html.ActionLink("Back to List", "Index", new object { }, new { @class = "btn btn-info" })
+            </div>
+        </div>
+    </div>
+</div>
+

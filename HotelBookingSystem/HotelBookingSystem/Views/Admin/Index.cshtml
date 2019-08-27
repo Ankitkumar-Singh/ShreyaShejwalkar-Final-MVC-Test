@@ -1,0 +1,52 @@
+﻿@model IPagedList<HotelBookingSystem.Models.HotelDetail>
+@using PagedList.Mvc;
+@using PagedList;
+
+<!--Displaying List of Hotels-->
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<!--Search box-->
+<div class="row">
+    <div class=" col-md-6">
+        <div class="search-container">
+            @using (@Html.BeginForm("Index", "Admin", FormMethod.Get))
+            {
+            <div class="form-inline">
+                @Html.TextBox("search", "", new { placeholder = "Search", @class = "form-control  mr-2" })               
+                <button type="submit" value="Search" class="btn btn-search btn-info"><i class="fa fa-search"></i></button>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>Name </th>
+        <th>Category</th>
+        <th>Description</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="@Url.Content(item.HotelImage)" class="img-rounded" alt="Responsive Image" width="200" height=" 200" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelCategory.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelDescription)
+            </td>
+
+            <td>
+                @Html.ActionLink("View", "Details", new { id = item.HotelId }, new { @class = "btn btn-info" })
+            </td>
+        </tr>
+    }
+</table>
+<div class="text-center">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true })
+</div>

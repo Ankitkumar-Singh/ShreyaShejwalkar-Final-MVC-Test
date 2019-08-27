@@ -1,0 +1,42 @@
+﻿@model HotelBookingSystem.Models.BookingDetail
+
+<!--Displaying Cancel Request Confirmation-->
+@using (Html.BeginForm("Edit","User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Booking Details</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.BookId)
+        <table class="table table-hover">
+            <tr>
+                <th> Name </th>
+                <td> @Html.DisplayFor(model => model.UserDetail.FirstName)</td>
+            </tr>
+            <tr>
+                <th>Hotel Name </th>
+                <td>@Html.DisplayFor(model => model.HotelDetail.HotelName)</td>
+            </tr>
+            <tr>
+                <th>Booking Date </th>
+                <td>@Html.DisplayFor(model => model.BookDate)</td>
+            </tr>
+            <tr>
+                <th>No.of Rooms </th>
+                <td>@Html.DisplayFor(model => model.Rooms)</td>
+            </tr>
+            <tr>
+                <th>Status </th>
+                <td> @Html.DisplayFor(model => model.Status)</td>
+            </tr>
+        </table>        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-danger" onclick="return alert ('Booking Request Sent for Cancellation');" />
+                @Html.ActionLink("Back to List", "Index", new object { },new { @class="btn btn-info"})
+            </div>
+        </div>
+    </div>
+}

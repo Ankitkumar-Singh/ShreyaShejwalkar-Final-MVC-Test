@@ -1,0 +1,24 @@
+﻿body {
+    padding-top: 56px;
+}
+
+.carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    background-image:url('~/Assets/images/Salana.jpg');
+    background-size: cover;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+.title {
+margin-bottom:200px;
+font-weight:400;
+font-size:80px;
+}
+.content {
+ margin-bottom:50px;
+ font-size:30px;
+}

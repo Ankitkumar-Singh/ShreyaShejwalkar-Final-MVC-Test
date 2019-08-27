@@ -1,0 +1,35 @@
+﻿@model IEnumerable<HotelBookingSystem.Models.BookingDetail>
+
+<!--Displaying Daily Booking of hotels-->
+<div class="table-responsive m-t-20 no-wrap">
+    <p><h4>Total no.of Bookings Today  :  @Model.Count()</h4></p>
+    <table class="table vm no-th-brd pro-of-month">
+        <thead>
+            <tr><th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HotelDetail.HotelName)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Rooms)
+                </th>
+
+            </tr>
+        </thead>
+        @{int RowNo = 0;}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@{RowNo++;} @RowNo</td>        
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelDetail.HotelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rooms)
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>   
+<p> @Html.ActionLink("Back to List", "Index", new object { }, new { @class = "btn btn-info" }) </p>   

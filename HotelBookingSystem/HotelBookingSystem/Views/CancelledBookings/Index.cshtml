@@ -1,0 +1,34 @@
+﻿@model IEnumerable<HotelBookingSystem.Models.BookingDetail>
+
+<!--Displaying Bookings requested for Cancellation-->
+<h4>Request's for Booking Cancellation</h4>
+<hr />
+<table class="table">
+    <tr>
+        <th> Name </th>
+        <th> Hotel Name </th>
+        <th>Booking Date </th>
+        <th> No.of Rooms </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserDetail.FirstName) @Html.DisplayFor(modelItem => item.UserDetail.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotelDetail.HotelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rooms)
+            </td>
+            <td>
+                @Html.ActionLink("Delete Request", "Delete", new { id = item.BookId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+</table>

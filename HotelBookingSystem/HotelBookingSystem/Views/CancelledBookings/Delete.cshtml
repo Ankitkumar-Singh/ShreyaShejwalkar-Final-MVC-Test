@@ -1,0 +1,29 @@
+﻿@model HotelBookingSystem.Models.BookingDetail
+
+<!--Delete Bookings-->
+<h3>Are you sure you want to delete the request ?</h3>
+<hr />
+<div>
+    <table class="table table-hover">
+        <tr>
+            <td>Hotel Name </td>
+            <td>@Html.DisplayFor(model => model.HotelDetail.HotelName)</td>
+        </tr>
+        <tr>
+            <td>Booking Date </td>
+            <td>@Html.DisplayFor(model => model.BookDate)</td>
+        </tr>
+        <tr>
+            <td>No.of Rooms </td>
+            <td>@Html.DisplayFor(model => model.Rooms)</td>
+        </tr>      
+     </table>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> 
+            @Html.ActionLink("Back to List", "Index",new object { },new { @class="btn btn-info"})
+        </div>
+    }
+</div>

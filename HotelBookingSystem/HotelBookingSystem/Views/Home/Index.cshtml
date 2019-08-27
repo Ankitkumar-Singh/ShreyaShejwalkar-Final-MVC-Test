@@ -1,0 +1,72 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Expedia</title>
+    <link href="~/Assets/css/Index.css" rel="stylesheet" />
+    <link href="~/Assets/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">Expedia</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home")"><span> Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "User")"><span> Book Now</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Admin")"><span>Admin</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img src="~/Assets/images/HotelImage.jpg" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="title">Expedia</h3>
+                        <p class="content">Find your ideal hotel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Page Content -->
+    <div class="container text-center">
+        <h1 class="my-4">Welcome to Expedia</h1>
+        <!-- Features Section -->
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-fluid rounded" src="~/Assets/images/Salana.jpg" alt="">
+            </div>
+            <div class="col-md-6">
+                <h2>About Us</h2>
+                <p>At Expedia, we’re proud to say that no other travel company offers more hotel booking options or provides a better reservations experience. We pride ourselves on delivering the best hotel prices from the largest selection of hotels and resorts, both in India and across the world. Whether you are looking for a brief stay in Kochi, a weekend getaway in Singapore, business accommodations in Hong Kong or a two-week holiday across Europe, Expedia has the widest range of cheap hotels available.</p>
+            </div>
+        </div>      
+        <hr>
+    </div>   
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Hotel Booking 2019</p>
+        </div>       
+    </footer>
+</body>
+</html>
