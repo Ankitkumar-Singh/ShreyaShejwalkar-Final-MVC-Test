@@ -18,15 +18,15 @@ Admin
 
 *  User can SignIn and SignUp
 
-**UserName : shreya@gmail.com
+- UserName : shreya@gmail.com
   Password : Shreya@123
   
-**UserName : rabai@gmail.com
+- UserName : rabai@gmail.com
   Password : Rabia@123
 
 *  Admin can  only SignIn 
 
-**UserName : Admin@gmail.com
+- UserName : Admin@gmail.com
   Password : Admin@123
 
 
