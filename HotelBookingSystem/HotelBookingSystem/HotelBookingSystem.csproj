@@ -185,6 +185,9 @@
       <DependentUpon>HotelBookingSystem.edmx</DependentUpon>
       <LastGenOutput>HotelBookingSystem.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
